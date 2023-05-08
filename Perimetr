@@ -1,0 +1,23 @@
+import math
+
+def long(x1,x2,y1,y2):
+    return math.sqrt((x2-x1)**2 + (y2-y1)**2)
+
+def perimetr():
+    n = int(input("Введите количество вершин: "))
+    per = 0
+    arr_x = []
+    arr_y = []
+    for i in range(n):
+        print(F"~~~~~~~~~~~~~~  Point {i}  ~~~~~~~~~~~~~~~~~~~~")
+        x = int(input("x = "))
+        y = int(input("y = "))
+        arr_x.append(x)
+        arr_y.append(y)
+    for j in range(n-1):
+        per += long(arr_x[j], arr_x[j+1],arr_y[j],arr_y[j+1])
+        print("R = ", long(arr_x[j], arr_x[j+1],arr_y[j],arr_y[j+1]))
+    per += long(arr_x[len(arr_x)-1], arr_x[0],arr_y[len(arr_y)-1],arr_y[0])
+    print("R = ", long(arr_x[len(arr_x)-1], arr_x[0],arr_y[len(arr_y)-1],arr_y[0]))
+    print("Периметр = ", per)
+perimetr()
